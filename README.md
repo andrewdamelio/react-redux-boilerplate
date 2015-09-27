@@ -1,0 +1,12 @@
+- React
+- Redux
+- Redux-Router
+- Redux-DevTools
+- Redux-Logger
+- Redux Thunk / Redux Actions
+- React-Hot-Loader
+- Webpack
+- Babel JSX/ES6/ES7
+- Immutable.js
+- Redium
+- Eslint
