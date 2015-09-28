@@ -1,0 +1,50 @@
+{
+  "name": "react-redux-boilerplate",
+  "version": "0.1.0",
+  "description": "A react / redux starter project.",
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress",
+    "clean": "rimraf dist",
+    "build": "NODE_ENV=production webpack -p",
+    "test": "",
+    "test:watch": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewdamelio/react-redux-boilerplate"
+  },
+  "homepage": "https://github.com/andrewdamelio/react-redux-boilerplate#readme",
+  "devDependencies": {
+    "babel": "^5.5.8",
+    "babel-core": "^5.6.18",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^5.1.4",
+    "css-loader": "^0.19.0",
+    "eslint": "^1.5.1",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^3.4.2",
+    "file-loader": "^0.8.4",
+    "history": "^1.10.2",
+    "immutable": "^3.7.5",
+    "node-libs-browser": "^0.5.2",
+    "node-sass": "^3.3.3",
+    "radium": "^0.14.1",
+    "react": "^0.13.3",
+    "react-hot-loader": "^1.3.0",
+    "react-redux": "^2.0.0",
+    "react-router": "^1.0.0-rc1",
+    "redux": "^2.0.0",
+    "redux-actions": "^0.8.0",
+    "redux-devtools": "^2.1.2",
+    "redux-logger": "^1.0.9",
+    "redux-router": "^1.0.0-beta3",
+    "redux-thunk": "^0.1.0",
+    "rimraf": "^2.3.4",
+    "sass-loader": "^2.0.1",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.12.4",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.11.0"
+  }
+}
