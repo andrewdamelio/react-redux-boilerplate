@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Counter from '../components/Counter';
 import * as CounterActions from '../actions/counter';
 
+@connect(mapState)
 class CounterPage extends Component {
 
   static propTypes = {
@@ -26,4 +27,4 @@ function mapState(state) {
   };
 }
 
-export default connect(mapState)(CounterPage);
+export default CounterPage;

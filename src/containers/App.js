@@ -23,7 +23,7 @@ class App extends Component {
             <Link to="/">Home</Link>{'/'}
             <Link to="/counter">Counter</Link>
           </nav>
-          <img src="https://placekitten.com/g/1100/778" />
+          <img src="./src/assets/background.png" />
         </div>
         <div style={ styles.container }>
           { children }

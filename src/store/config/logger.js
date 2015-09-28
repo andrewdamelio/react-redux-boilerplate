@@ -3,15 +3,15 @@ import { Iterable } from 'immutable';
 
 export default createLogger({
   collapsed: true,
+  /**
+   * [Log state as JavaScript data structures instead
+   *  of immutable data structures]
+   */
   transformer: (state) => {
-    const newState = {};
-    for (const i of Object.keys(state)) {
-      if (Iterable.isIterable(state[i])) {
-        newState[i] = state[i].toJS();
-      } else {
-        newState[i] = state[i];
-      }
-    }
-    return newState;
+    return Object.keys(state).reduce((newState, key) => {
+      const val = state[key];
+      newState[key] =  Iterable.isIterable(val) ? val.toJS() : val;
+      return newState;
+    }, {});
   },
 });

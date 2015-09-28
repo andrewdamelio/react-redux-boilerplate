@@ -1,4 +1,3 @@
-
 import { devTools } from 'redux-devtools';
 import { reduxReactRouter } from 'redux-router';
 import thunkMiddleware from 'redux-thunk';
