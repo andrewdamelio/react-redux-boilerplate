@@ -19,10 +19,11 @@ export default class Counter extends Component {
     return (
       <div style={ styles.counter }>
         <h1>
-          <div style={[
-            styles[displayColor],
-            styles.rotate,
-          ]}>
+          <div id="status-test-id"
+               style={[
+                 styles[displayColor],
+                 styles.rotate,
+               ]}>
             { counter >= 0 ? ':)' : ':(' }
           </div>
         </h1>

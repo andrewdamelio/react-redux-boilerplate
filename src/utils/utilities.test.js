@@ -1,10 +1,8 @@
-import createLogger from 'redux-logger';
 import { immutableToJS } from './utilities';
 import assert from 'assert';
 import { fromJS } from 'immutable';
 
 describe('immutableToJS', () => {
-
   const mockState = {
     state: {
       name: 'John',
@@ -15,11 +13,11 @@ describe('immutableToJS', () => {
         name: 'Big John',
         age: 34,
       }],
-    }
+    },
   };
 
   const stateWithImmutable = {
-    state: fromJS(mockState.state)
+    state: fromJS(mockState.state),
   };
 
   it('should ignore regular JS structures', () => {
@@ -27,7 +25,6 @@ describe('immutableToJS', () => {
   });
 
   it('should convert Immutable structures to JS structures', () => {
-   assert.deepEqual(mockState, immutableToJS(stateWithImmutable));
+    assert.deepEqual(mockState, immutableToJS(stateWithImmutable));
   });
-
 });
