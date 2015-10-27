@@ -6,8 +6,8 @@
     "start": "webpack-dev-server --hot --progress",
     "clean": "rimraf dist",
     "build": "NODE_ENV=production webpack -p",
-    "test": "./node_modules/.bin/mocha --reporter nyan --compilers js:babel/register src/**/*test.js",
-    "test:watch": "./node_modules/.bin/mocha -w --reporter nyan --compilers js:babel/register src/**/*test.js"
+    "test": "mocha src/**/*test.js --opts ./mocha.opts",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
