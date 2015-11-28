@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { fromJS } from 'immutable';
 
 const mockData = fromJS([{
@@ -28,21 +28,21 @@ const mockData = fromJS([{
 }]);
 
 
-export default class Main extends Component {
-  render() {
-    const rows = mockData.toJS().map((data, index) => {
-      return (
-        <li key={ index }>
-          <button>{ data.name }</button>
-        </li>
-      );
-    });
-
+const Main = () => {
+  const rows = mockData.toJS().map((data, index) => {
     return (
-      <div>
-        <h3>React / Redux boilerplate</h3>
-        <ul>{ rows }</ul>
-      </div>
+      <li key={ index }>
+        <button>{ data.name }</button>
+      </li>
     );
-  }
-}
+  });
+
+  return (
+    <div>
+      <h3>React / Redux boilerplate</h3>
+      <ul>{ rows }</ul>
+    </div>
+  );
+};
+
+export default Main;

@@ -25,8 +25,6 @@ You'll need to have [Node.js] (https://nodejs.org/) to get started.
 
 ```bash
 $ npm install # Install dependencies
-
-$ gem install scss-lint
 ```
 
 * If having issues try updating to the latest version of node.
