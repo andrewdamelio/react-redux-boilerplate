@@ -1,5 +1,5 @@
-import 'babel-core/polyfill';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ReduxRouter } from 'redux-router';
 import configureStore from './store/configureStore';
@@ -16,12 +16,10 @@ import {
 const initialState = {};
 const store = configureStore(initialState, routes);
 
-React.render(
+ReactDOM.render(
   <div>
     <Provider store={ store }>
-      {() =>
-        <ReduxRouter />
-      }
+      <ReduxRouter />
     </Provider>
     <DebugPanel top left bottom>
       <DevTools store={ store }

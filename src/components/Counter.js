@@ -1,41 +1,31 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import Radium from 'radium';
 
-@Radium
-export default class Counter extends Component {
-  static propTypes = {
-    counter: PropTypes.number,
-    increment: PropTypes.func.isRequired,
-    decrement: PropTypes.func.isRequired,
-  }
 
-  static defaultProps = {
-    counter: 0,
-  }
+const Counter = ({ counter, increment, decrement }) => {
+  const displayColor = counter >= 0 ? 'green' : 'red';
+  return (
+    <div style={ styles.counter }>
+      <h1>
+        <div id="status-test-id"
+             style={[
+               styles[displayColor],
+               styles.rotate,
+             ]}>
+          { counter >= 0 ? ':)' : ':(' }
+        </div>
+      </h1>
 
-  render() {
-    const { counter, increment, decrement } = this.props;
-    const displayColor = counter >= 0 ? 'green' : 'red';
-    return (
-      <div style={ styles.counter }>
-        <h1>
-          <div id="status-test-id"
-               style={[
-                 styles[displayColor],
-                 styles.rotate,
-               ]}>
-            { counter >= 0 ? ':)' : ':(' }
-          </div>
-        </h1>
+      <button onClick={ increment }>Increment</button>
+      { ' ' + counter + ' ' }
+      <button onClick={ decrement }>Decrement</button>
 
-        <button onClick={ increment }>Increment</button>
-        { ' ' + counter + ' ' }
-        <button onClick={ decrement }>Decrement</button>
+    </div>
+  );
+};
 
-      </div>
-    );
-  }
-}
+export default  Radium(Counter);
+
 
 const styles = {
   counter: {
