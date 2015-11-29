@@ -1,13 +1,14 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from '../../containers/App';
-import Main from '../../containers/Main';
 import CounterPage from '../../containers/CounterPage';
+import AboutPage from '../../containers/AboutPage';
 
 const routes = (
   <Route path="/" component={ App }>
-    <IndexRoute component={ Main } />
-    <Route path="/counter" component={ CounterPage } />
+    <IndexRoute component={ CounterPage } />
+    <Route path="/about" component={ AboutPage } />
+    <Route path="*" component={ AboutPage } />
   </Route>
 );
 

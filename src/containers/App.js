@@ -1,39 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import Radium from 'radium';
+import Nav from '../components/Nav';
 
-const App = ( { children }) => {
-  return (
-    <div style={ styles.flexContainer }>
-      <div>
-        <nav style={ styles.nav }>
-          <Link to="/">Home</Link>{'/'}
-          <Link to="/counter">Counter</Link>
-        </nav>
-        <img src="./src/assets/background.png" />
-      </div>
-      <div style={ styles.container }>
-        { children }
-      </div>
-    </div>
-  );
-};
+function mapStateToProps(state) {
+  return {
+    location: state.router.location,
+  };
+}
 
-export default Radium(App);
+class App extends Component {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+  };
+
+  render() {
+    const { props } = this;
+    return (
+      <div className="flex flex-row">
+
+        <Nav className="absolute bottom-0 right-0 p2"
+             location={ props.location } />
+
+        <img style={ styles.background }
+             src="./src/assets/background.png" />
+
+        <div className="p2" style={ styles.container }>
+          { props.children }
+        </div>
+      </div>
+    );
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  {}
+)(Radium(App));
+
 
 const styles = {
-  flexContainer: {
-    display: 'flex',
-    flexDirection: 'row',
+  background: {
+    width: '75%',
+    height: '100vh',
   },
   container: {
-    padding: '20px',
-    width: '100%',
-  },
-  nav: {
-    position: 'absolute',
-    right: '0%',
-    bottom: '0px',
-    padding: '10px',
+    width: '25%',
   },
 };
+
