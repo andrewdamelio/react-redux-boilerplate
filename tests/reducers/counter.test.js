@@ -1,6 +1,6 @@
 import assert from 'assert';
-import counterReducer from './counter';
-import { INCREMENT, DECREMENT } from '../constants';
+import counterReducer from '../../src/reducers/counter';
+import { INCREMENT, DECREMENT } from '../../src/constants/index';
 import { Map } from 'immutable';
 
 let state = counterReducer(undefined, {});

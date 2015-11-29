@@ -1,8 +1,8 @@
 import { devTools } from 'redux-devtools';
 import { reduxReactRouter } from 'redux-router';
 import thunkMiddleware from 'redux-thunk';
-import createHashHistory from 'history/lib/createHashHistory';
 import logger from './config/logger';
+import history from './config/history';
 import rootReducer from '../reducers';
 
 import {
@@ -11,7 +11,6 @@ import {
   compose,
 } from 'redux';
 
-const history = createHashHistory();
 
 export default function configureStore(initialState, routes) {
   const store = compose(

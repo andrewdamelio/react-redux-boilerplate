@@ -1,10 +1,11 @@
 /* eslint-env node, mocha */
 import jsdom from 'jsdom';
 import assert from'assert';
-import React from 'react/addons';
-import Counter from './Counter';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Counter from '../../src/components/Counter';
+import TestUtils from 'react-addons-test-utils';
 
-const TestUtils = React.addons.TestUtils;
 
 
 /**
@@ -15,7 +16,7 @@ const TestUtils = React.addons.TestUtils;
  * @return computed styles
  */
 function getStylesByTestId(component, lookup) {
-  const node = React.findDOMNode(component);
+  const node = ReactDOM.findDOMNode(component);
   const targetNode = node.querySelector(lookup);
   const styles = global.window.getComputedStyle(targetNode);
 

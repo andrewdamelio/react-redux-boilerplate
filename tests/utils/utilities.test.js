@@ -1,4 +1,4 @@
-import { immutableToJS } from './utilities';
+import { immutableToJS } from '../../src/utils/utilities';
 import assert from 'assert';
 import { fromJS } from 'immutable';
 

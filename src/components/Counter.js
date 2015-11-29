@@ -1,43 +1,40 @@
 import React from 'react';
 import Radium from 'radium';
-
+import Status from './Status';
 
 const Counter = ({ counter, increment, decrement }) => {
-  const displayColor = counter >= 0 ? 'green' : 'red';
   return (
-    <div style={ styles.counter }>
-      <h1>
-        <div id="status-test-id"
-             style={[
-               styles[displayColor],
-               styles.rotate,
-             ]}>
-          { counter >= 0 ? ':)' : ':(' }
+    <div className="center flex flex-column" style={ styles.base }>
+      <Status counter={ counter }/>
+
+      <div className="flex-row">
+        <button className="btn btn-outline"
+                style={ styles.button }
+                onClick={ increment }>Increment</button>
+
+        <div className="m1">
+          { ' ' + counter + ' ' }
         </div>
-      </h1>
 
-      <button onClick={ increment }>Increment</button>
-      { ' ' + counter + ' ' }
-      <button onClick={ decrement }>Decrement</button>
-
+        <button className="btn btn-outline"
+                style={ styles.button }
+                onClick={ decrement }>Decrement</button>
+      </div>
     </div>
   );
 };
 
 export default  Radium(Counter);
 
-
 const styles = {
-  counter: {
-    textAlign: 'center',
+  base: {
+    userSelect: 'none',
   },
-  rotate: {
-    transform: 'rotate(90deg)',
+  status: {
+    height: 50,
+    border: '1px solid black',
   },
-  red: {
-    color: '#FE3232',
-  },
-  green: {
-    color: '#2AFE1B',
+  button: {
+    fontSize: '0.7em',
   },
 };
