@@ -4,20 +4,16 @@
 
 [Demo - react-redux-boilerplate](http://andrewdamel.io/dev/react-redux)
 
-#### Core libraries and tools:
-- React (with JSX)
-- React Hot Loader
+#### Core libraries:
+- React
 - Redux
-  - Redux Router
-  - Redux DevTools
-  - Redux Logger
-  - Redux Thunk / Redux Actions
+- React-Router
+- Redux-Simple-Router
+- Redux DevTools
 - ImmutableJS
 - Webpack
-- Babel (ES6, ES7 - Using Stage 0 features)
+- Babel6
 - ESlint
-- Radium
-
 
 ## Installation
 
@@ -27,10 +23,15 @@ You'll need to have [Node.js] (https://nodejs.org/) to get started.
 $ npm install # Install dependencies
 ```
 
-* If having issues try updating to the latest version of node.
+* If your having issues try updating to the latest version of node.
 
 
 ## Getting Started
+
+#### Tests
+```bash
+$ npm run test
+```
 
 #### Dev
 ```bash
