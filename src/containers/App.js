@@ -5,13 +5,13 @@ import Nav from '../components/Nav';
 
 function mapStateToProps(state) {
   return {
-    location: state.router.location,
+    location: state.routing.path,
   };
 }
 
 class App extends Component {
   static propTypes = {
-    location: PropTypes.object.isRequired,
+    location: PropTypes.string.isRequired,
   };
 
   render() {
