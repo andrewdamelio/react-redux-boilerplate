@@ -3,7 +3,7 @@ import { immutableToJS } from '../../utils/utilities';
 
 export default createLogger({
   collapsed: true,
-  transformer: (state) => {
+  stateTransformer: (state) => {
     return immutableToJS(state);
   },
 });

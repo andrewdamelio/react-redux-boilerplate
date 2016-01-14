@@ -3,7 +3,7 @@ import Radium from 'radium';
 import { Link } from 'react-router';
 
 const Nav = ( { location, className = '', style = {} }) => {
-  const homeActive = location.pathname === '/';
+  const homeActive = location === '/';
 
   return (
     <nav className={`${ className }`}

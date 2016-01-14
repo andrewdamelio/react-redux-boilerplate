@@ -1,8 +1,5 @@
-import { devTools } from 'redux-devtools';
-import { reduxReactRouter } from 'redux-router';
 import thunkMiddleware from 'redux-thunk';
 import logger from './config/logger';
-import history from './config/history';
 import rootReducer from '../reducers';
 
 import {
@@ -12,11 +9,9 @@ import {
 } from 'redux';
 
 
-export default function configureStore(initialState, routes) {
+export default function configureStore(initialState) {
   const store = compose(
-    reduxReactRouter({routes, history}),
     applyMiddleware(thunkMiddleware, logger),
-    devTools(),
   )(createStore)(rootReducer, initialState);
 
   if (module.hot) {
