@@ -1,8 +1,8 @@
-import createHashHistory from 'history/lib/createHashHistory';
+import { hashHistory } from 'react-router';
 
 const _createHashHistory = () => {
   if (global.window) {
-    return createHashHistory();
+    return hashHistory;
   }
 
   return undefined;

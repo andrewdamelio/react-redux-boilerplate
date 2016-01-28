@@ -1,5 +1,5 @@
 import createLogger from 'redux-logger';
-import { immutableToJS } from '../../utils/utilities';
+import { immutableToJS } from '../utils/utilities';
 
 export default createLogger({
   collapsed: true,

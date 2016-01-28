@@ -5,15 +5,15 @@
 [Demo - react-redux-boilerplate](http://andrewdamel.io/dev/react-redux)
 
 #### Core libraries:
-- React
-- Redux
-- React-Router
-- Redux-Simple-Router
-- Redux DevTools
-- ImmutableJS
-- Webpack
-- Babel6
-- ESlint
+- React 🚀
+- Redux ⚗
+- React-Router 🛰
+- React-Router-Redux 🚀 🛰 ⚗
+- Redux DevTools 📊
+- ImmutableJS 💎
+- Webpack 🕸
+- Babel6 🔑
+- ESlint 🚨
 
 ## Installation
 
