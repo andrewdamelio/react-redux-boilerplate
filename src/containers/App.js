@@ -5,7 +5,7 @@ import Nav from '../components/Nav';
 
 function mapStateToProps(state) {
   return {
-    location: state.routing.path,
+    location: state.routing.location.pathname,
   };
 }
 
