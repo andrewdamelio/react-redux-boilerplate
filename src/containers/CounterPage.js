@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Counter from '../components/Counter';
-import { increment, decrement } from '../actions/counter';
+import { increment, decrement } from '../reducers/counter';
 
 function mapStateToProps(state) {
   return {
