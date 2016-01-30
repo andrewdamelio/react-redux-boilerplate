@@ -20,6 +20,12 @@ module.exports = {
     publicPath: 'http://localhost:8080/',
     filename: 'dist/[name].js'
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      __DEV__: process.env.NODE_ENV !== 'production',
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+  ],
   module: {
     preLoaders: [{
       test: /\.js$/,

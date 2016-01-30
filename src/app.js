@@ -11,13 +11,22 @@ import configureStore from './store/configureStore';
 const initialState = {};
 const store = configureStore(initialState);
 
+const injectDevTools = ()=> {
+  if (__DEV__) {
+    return (
+      <DevTools />
+    );
+  }
+  return null;
+};
+
 ReactDOM.render(
   <Provider store={ store }>
     <div>
       <Router history={ history }>
         { routes }
       </Router>
-      <DevTools />
+      { injectDevTools() }
     </div>
   </Provider>,
   document.getElementById('root')

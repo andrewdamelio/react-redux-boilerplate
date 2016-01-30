@@ -15,6 +15,11 @@
 - Babel6 🔑
 - ESlint 🚨
 
+#### middleware
+  - promiseMiddleware (example of custom middleware)
+  - [redux-logger](https://github.com/fcomb/redux-logger)
+  - [redux-thunk](https://github.com/gaearon/redux-thunk)
+
 ## Installation
 
 You'll need to have [Node.js] (https://nodejs.org/) to get started.

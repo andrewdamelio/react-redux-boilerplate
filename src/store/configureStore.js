@@ -1,22 +1,28 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistory } from 'react-router-redux';
-import thunkMiddleware from 'redux-thunk';
-import DevTools from '../containers/DevTools';
+import thunk from 'redux-thunk';
+import promiseMiddleware from '../middleware/promiseMiddleware';
 import logger from './logger';
+import DevTools from '../containers/DevTools';
 import history from './history';
 import rootReducer from '../reducers';
 
-const reduxRouterMiddleware = syncHistory(history);
+
+const reduxRouter = syncHistory(history);
 
 export default function configureStore(initialState) {
-  const createStoreWithMiddleware = compose(
-    applyMiddleware(
-      thunkMiddleware,
-      logger,
-      reduxRouterMiddleware,
-    ),
-    DevTools.instrument(),
-  )(createStore);
+  let createStoreWithMiddleware;
+
+  if (__DEV__) {
+    createStoreWithMiddleware = compose(
+      applyMiddleware(promiseMiddleware, thunk, reduxRouter, logger),
+      DevTools.instrument(),
+    )(createStore);
+  } else {
+    createStoreWithMiddleware = compose(
+      applyMiddleware(promiseMiddleware, thunk, reduxRouter),
+    )(createStore);
+  }
 
   const store = createStoreWithMiddleware(rootReducer, initialState);
 
@@ -29,7 +35,7 @@ export default function configureStore(initialState) {
   }
 
   // Required for replaying actions from devtools to work
-  reduxRouterMiddleware.listenForReplays(store);
+  reduxRouter.listenForReplays(store);
 
   return store;
 }
