@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Radium from 'radium';
 import { Link } from 'react-router';
 
@@ -18,6 +18,11 @@ const Nav = ( { location, className = '' }) => {
               to="/">Counter</Link>
     </nav>
   );
+};
+
+Nav.propTypes = {
+  location: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default Radium(Nav);

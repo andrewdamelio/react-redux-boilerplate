@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Radium from 'radium';
 import Status from './Status';
 
@@ -22,6 +22,12 @@ const Counter = ({ counter, increment, decrement }) => {
       </div>
     </div>
   );
+};
+
+Counter.propTypes = {
+  counter: PropTypes.number.isRequired,
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
 };
 
 export default  Radium(Counter);

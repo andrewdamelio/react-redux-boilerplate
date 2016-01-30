@@ -7,7 +7,6 @@ import Counter from '../../src/components/Counter';
 import TestUtils from 'react-addons-test-utils';
 
 
-
 /**
  * Returns the computed styles of a 'component' at the
  * provided 'lookup' id.
@@ -33,8 +32,11 @@ describe('Counter', () => {
     let counter;
 
     beforeEach(() => {
+      const mockFn = () => true;
       counter = TestUtils.renderIntoDocument(
-        <Counter counter={ 1 } />
+        <Counter counter={ 1 }
+                 increment={ mockFn }
+                 decrement={ mockFn } />
       );
     });
 
@@ -49,8 +51,11 @@ describe('Counter', () => {
     let counter;
 
     beforeEach(() => {
+      const mockFn = () => true;
       counter = TestUtils.renderIntoDocument(
-        <Counter counter={ -1 } />
+        <Counter counter={ -1 }
+                 increment={ mockFn }
+                 decrement={ mockFn } />
       );
     });
 

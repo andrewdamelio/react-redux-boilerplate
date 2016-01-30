@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+
 
 const Loading = ({ isVisible }) => {
   const transition = { transition: 'opacity 300ms, visbility 300ms' };
@@ -28,6 +29,10 @@ const Loading = ({ isVisible }) => {
       </div>
     </div>
   );
+};
+
+Loading.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
 };
 
 export default Loading;

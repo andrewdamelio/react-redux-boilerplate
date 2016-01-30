@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Radium from 'radium';
 
 const Status = ({ counter }) => {
@@ -24,6 +24,10 @@ const Status = ({ counter }) => {
       </div>
     </h1>
   );
+};
+
+Status.propTypes = {
+  counter: PropTypes.number.isRequired,
 };
 
 export default Radium(Status);
