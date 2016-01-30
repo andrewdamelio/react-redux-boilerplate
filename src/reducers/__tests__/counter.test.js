@@ -1,5 +1,5 @@
 import assert from 'assert';
-import counterReducer from '../../src/reducers/counter';
+import counterReducer from '../../reducers/counter';
 import { Map } from 'immutable';
 
 const INCREMENT = 'INCREMENT';

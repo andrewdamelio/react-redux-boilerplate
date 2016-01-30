@@ -2,7 +2,7 @@
 
 # React / Redux Boilerplate
 
-[Demo - react-redux-boilerplate](http://andrewdamel.io/dev/react-redux)
+[Demo](http://andrewdamel.io/dev/react-redux)
 
 #### Core libraries:
 - React 🚀
@@ -33,16 +33,21 @@ $ npm install # Install dependencies
 
 ## Getting Started
 
+#### Dev
+```bash
+$ npm run dev
+```
+
+#### ESLint
+```bash
+$ npm run lint
+```
+
 #### Tests
 ```bash
 $ npm run test
+$ npm run test:watch
 ```
-
-#### Dev
-```bash
-$ npm start
-```
-Open http://localhost:8080 in your browser.
 
 #### Build
 ```bash

@@ -1,4 +1,5 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 function getEntrySources(sources) {
   if (process.env.NODE_ENV !== 'production') {
@@ -13,12 +14,12 @@ module.exports = {
   devtool: process.env.NODE_ENV !== 'production' ? 'eval-source-map' : '',
   entry: {
     bundle: getEntrySources([
-      './src/app.js'
-    ])
+      './src/app.js',
+    ]),
   },
   output: {
     publicPath: 'http://localhost:8080/',
-    filename: 'dist/[name].js'
+    filename: 'dist/[name].js',
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -29,12 +30,12 @@ module.exports = {
   module: {
     preLoaders: [{
       test: /\.js$/,
-      loader: 'source-map-loader'
+      loader: 'source-map-loader',
     }],
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel', 'eslint-loader'],
-      exclude: /node_modules/
+      loader: 'react-hot!babel!eslint-loader',
+      exclude: /node_modules/,
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader!postcss-loader!cssnext-loader',
@@ -44,6 +45,7 @@ module.exports = {
     }, {
       test: /\.(woff|woff2|ttf|eot)$/,
       loader: 'url-loader?prefix=font/&limit=5000',
-    }, ]
-  }
+    }],
+  },
+  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
 };

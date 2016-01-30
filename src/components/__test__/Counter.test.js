@@ -3,7 +3,7 @@ import jsdom from 'jsdom';
 import assert from'assert';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from '../../src/components/Counter';
+import Counter from '../Counter';
 import TestUtils from 'react-addons-test-utils';
 
 

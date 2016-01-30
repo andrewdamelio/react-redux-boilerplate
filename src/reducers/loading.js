@@ -1,5 +1,9 @@
-export const SHOW_LOADING_MODAL = 'SHOW_LOADING_MODAL';
-export const HIDE_LOADING_MODAL = 'HIDE_LOADING_MODAL';
+/* Constants */
+
+const SHOW_LOADING_MODAL = 'SHOW_LOADING_MODAL';
+const HIDE_LOADING_MODAL = 'HIDE_LOADING_MODAL';
+
+/* Reducer */
 
 const initialState = false;
 
@@ -18,6 +22,8 @@ function loadingReducer(state = initialState, action = {}) {
 }
 
 export default loadingReducer;
+
+/* Actions */
 
 export function showLoadingModal() {
   return { type: SHOW_LOADING_MODAL };
