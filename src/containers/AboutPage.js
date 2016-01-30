@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { fromJS } from 'immutable';
+import Loading from '../components/Loading';
+import { showLoadingModal, hideLoadingModal } from '../reducers/loading';
 
 const mockData = fromJS([{
   'name': 'React',
@@ -15,22 +18,58 @@ const mockData = fromJS([{
   'name': 'Eslint',
 }]);
 
+function mapStateToProps(state) {
+  return {
+    loading: state.loading,
+  };
+}
 
-const About = () => {
-  const rows = mockData.map((data, index) => {
+function mapDispatchToProps(dispatch) {
+  return {
+    showLoadingModal: () => dispatch(showLoadingModal()),
+    hideLoadingModal: () => dispatch(hideLoadingModal()),
+  };
+}
+
+
+class AboutPage extends Component {
+
+  componentDidMount() {
+    const { props } = this;
+    props.showLoadingModal();
+    setTimeout(() => {
+      props.hideLoadingModal();
+    }, 500);
+  }
+
+  render() {
+    const rows = mockData.map((data, index) => {
+      return (
+        <li key={ index }>
+          { data.get('name') }
+        </li>
+      );
+    });
+
+    const { loading } = this.props;
     return (
-      <li key={ index }>
-        { data.get('name') }
-      </li>
+      <div>
+        <Loading isVisible={ loading } />
+        <h3>React / Redux boilerplate</h3>
+        <ul>{ rows }</ul>
+      </div>
     );
-  });
+  }
+}
 
-  return (
-    <div>
-      <h3>React / Redux boilerplate</h3>
-      <ul>{ rows }</ul>
-    </div>
-  );
+AboutPage.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  showLoadingModal: PropTypes.func.isRequired,
+  hideLoadingModal: PropTypes.func.isRequired,
 };
 
-export default About;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(AboutPage);

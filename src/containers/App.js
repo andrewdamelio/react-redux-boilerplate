@@ -10,9 +10,6 @@ function mapStateToProps(state) {
 }
 
 class App extends Component {
-  static propTypes = {
-    location: PropTypes.string.isRequired,
-  };
 
   render() {
     const { props } = this;
@@ -33,6 +30,10 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  location: PropTypes.string.isRequired,
+};
+
 export default connect(
   mapStateToProps,
   {}
@@ -48,4 +49,3 @@ const styles = {
     width: '25%',
   },
 };
-
