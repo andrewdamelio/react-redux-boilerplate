@@ -25,6 +25,7 @@
   - [redux-thunk](https://github.com/gaearon/redux-thunk)
   - [redux-saga](https://github.com/yelouafi/redux-saga)
 
+
 ## Installation
 
 You'll need to have [Node.js] (https://nodejs.org/) to get started.
@@ -62,3 +63,10 @@ $ http-server -p 8080 .
 
 ```
 Open http://localhost:8080 in your browser.
+
+## Containers (smart) vs Components (dumb)
+
+  - **Containers** are smart because they provide functions and data to the components. We also **connect** to redux at this level, grabbing reducer actions and state to also pass down to our components.
+
+  - **Components** are dumb because they don't know anything about anything. They get data and functions passed in via
+  **props**, and we try and avoid having any component state (including **lifecycle** events and **refs**). Your notice all the components in this boilerplate are using React's **stateless component** syntax.

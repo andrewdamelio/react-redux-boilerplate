@@ -51,10 +51,10 @@ export default connect(
 
 const styles = {
   background: {
-    width: '75%',
+    width: '80vw',
     height: '100vh',
   },
   container: {
-    width: '25%',
+    width: '20vw',
   },
 };

@@ -36,10 +36,6 @@ const styles = {
   base: {
     userSelect: 'none',
   },
-  status: {
-    height: 50,
-    border: '1px solid black',
-  },
   button: {
     fontSize: '0.7em',
   },
