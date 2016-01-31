@@ -41,10 +41,10 @@ module.exports = {
       loader: 'style-loader!css-loader!postcss-loader!cssnext-loader',
     }, {
       test: /\.(png|jpg|jpeg|gif|svg)$/,
-      loader: 'url-loader?prefix=img/&limit=5000',
+      loader: 'url-loader?prefix=img/&limit=53248',
     }, {
       test: /\.(woff|woff2|ttf|eot)$/,
-      loader: 'url-loader?prefix=font/&limit=5000',
+      loader: 'url-loader?prefix=font/&limit=53248',
     }],
   },
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],

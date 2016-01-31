@@ -28,7 +28,7 @@ class App extends Component {
              navigate={ props.navigate } />
 
         <img style={ styles.background }
-             src="./src/assets/background.png" />
+             src="./src/assets/background.jpg" />
 
         <div className="p2" style={ styles.container }>
           { props.children }
