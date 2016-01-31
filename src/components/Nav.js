@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Radium from 'radium';
 
-const Nav = ( { navigate, location, className = '' }) => {
+const Nav = ({ navigate, location, className = '' }) => {
   const homeActive = location === '/';
 
   return (

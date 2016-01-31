@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fromJS } from 'immutable';
 import Loading from '../components/Loading';
-import { showLoadingModal, hideLoadingModal } from '../reducers/loading';
+import { showLoadingModal } from '../reducers/loading';
 
 const mockData = fromJS([{
   'name': 'React',
@@ -27,7 +27,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     showLoadingModal: () => dispatch(showLoadingModal()),
-    hideLoadingModal: () => dispatch(hideLoadingModal()),
   };
 }
 
@@ -35,11 +34,7 @@ function mapDispatchToProps(dispatch) {
 class AboutPage extends Component {
 
   componentDidMount() {
-    const { props } = this;
-    props.showLoadingModal();
-    setTimeout(() => {
-      props.hideLoadingModal();
-    }, 500);
+    this.props.showLoadingModal();
   }
 
   render() {
@@ -65,7 +60,6 @@ class AboutPage extends Component {
 AboutPage.propTypes = {
   loading: PropTypes.bool.isRequired,
   showLoadingModal: PropTypes.func.isRequired,
-  hideLoadingModal: PropTypes.func.isRequired,
 };
 
 

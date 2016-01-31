@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Counter from '../components/Counter';
 import { increment, decrement } from '../reducers/counter';
 import Loading from '../components/Loading';
-import { showLoadingModal, hideLoadingModal } from '../reducers/loading';
+import { showLoadingModal } from '../reducers/loading';
 
 function mapStateToProps(state) {
   return {
@@ -17,18 +17,13 @@ function mapDispatchToProps(dispatch) {
     incrementCounter: () => dispatch(increment()),
     decrementCounter: () => dispatch(decrement()),
     showLoadingModal: () => dispatch(showLoadingModal()),
-    hideLoadingModal: () => dispatch(hideLoadingModal()),
   };
 }
 
 class CounterPage extends Component {
 
   componentDidMount() {
-    const { props } = this;
-    props.showLoadingModal();
-    setTimeout(() => {
-      props.hideLoadingModal();
-    }, 500);
+    this.props.showLoadingModal();
   }
 
   render() {
@@ -50,7 +45,6 @@ CounterPage.propTypes = {
   incrementCounter: PropTypes.func.isRequired,
   decrementCounter: PropTypes.func.isRequired,
   showLoadingModal: PropTypes.func.isRequired,
-  hideLoadingModal: PropTypes.func.isRequired,
 };
 
 

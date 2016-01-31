@@ -1,12 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistory } from 'react-router-redux';
+import sagaMiddleware from 'redux-saga';
 import thunk from 'redux-thunk';
 import promiseMiddleware from '../middleware/promiseMiddleware';
 import logger from './logger';
 import DevTools from '../containers/DevTools';
 import history from './history';
 import rootReducer from '../reducers';
-
+import delay from '../sagas/delay';
 
 const reduxRouter = syncHistory(history);
 
@@ -15,12 +16,23 @@ export default function configureStore(initialState) {
 
   if (__DEV__) {
     createStoreWithMiddleware = compose(
-      applyMiddleware(promiseMiddleware, thunk, reduxRouter, logger),
+      applyMiddleware(
+        reduxRouter,
+        sagaMiddleware(delay),
+        promiseMiddleware,
+        thunk,
+        logger,
+      ),
       DevTools.instrument(),
     )(createStore);
   } else {
     createStoreWithMiddleware = compose(
-      applyMiddleware(promiseMiddleware, thunk, reduxRouter),
+      applyMiddleware(
+        reduxRouter,
+        sagaMiddleware(delay),
+        promiseMiddleware,
+        thunk,
+      ),
     )(createStore);
   }
 

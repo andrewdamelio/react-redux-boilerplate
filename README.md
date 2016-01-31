@@ -23,6 +23,7 @@
   - [promiseMiddleware](https://github.com/andrewdamelio/react-redux-boilerplate/blob/master/src/middleware/promiseMiddleware.js) (example of custom middleware)
   - [redux-logger](https://github.com/fcomb/redux-logger)
   - [redux-thunk](https://github.com/gaearon/redux-thunk)
+  - [redux-saga](https://github.com/yelouafi/redux-saga)
 
 ## Installation
 
