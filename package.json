@@ -2,6 +2,9 @@
   "name": "react-redux-boilerplate",
   "version": "1.0.0",
   "description": "A react / redux starter project.",
+  "engines": {
+    "node": "4.x"
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "NODE_ENV=production webpack -p",

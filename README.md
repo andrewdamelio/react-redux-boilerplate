@@ -5,18 +5,22 @@
 [Demo](http://andrewdamel.io/dev/react-redux)
 
 #### Core libraries:
-- React 🚀
-- Redux ⚗
-- React-Router 🛰
-- React-Router-Redux 🚀 🛰 ⚗
-- Redux DevTools 📊
-- ImmutableJS 💎
-- Webpack 🕸
-- Babel6 🔑
-- ESlint 🚨
+- [React](https://facebook.github.io/react/) 🚀
+- [Redux](http://redux.js.org/) ⚗
+- [React-Router](https://github.com/rackt/react-router) 🛰
+- [React-Router-Redux](https://github.com/rackt/react-router-redux) 🚀 🛰 ⚗
+- [Redux DevTools](https://github.com/gaearon/redux-devtools) 📊
+- [ImmutableJS](https://facebook.github.io/immutable-js/) 💎
+- [Webpack](https://webpack.github.io/) 🕸
+- [Babel6](http://babeljs.io/) 🔑
+- [ESlint](http://eslint.org/) 🚨
+- Styles 🖌
+  - [Radium](http://stack.formidable.com/radium/)
+  - [PostCSS](https://github.com/postcss/postcss)
+  - [cssnext](http://cssnext.io/)
 
 #### middleware
-  - promiseMiddleware (example of custom middleware)
+  - [promiseMiddleware](https://github.com/andrewdamelio/react-redux-boilerplate/blob/master/src/middleware/promiseMiddleware.js) (example of custom middleware)
   - [redux-logger](https://github.com/fcomb/redux-logger)
   - [redux-thunk](https://github.com/gaearon/redux-thunk)
 

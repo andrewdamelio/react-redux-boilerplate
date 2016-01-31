@@ -1,21 +1,21 @@
 import React, { PropTypes } from 'react';
 import Radium from 'radium';
-import { Link } from 'react-router';
 
-const Nav = ( { location, className = '' }) => {
+const Nav = ( { navigate, location, className = '' }) => {
   const homeActive = location === '/';
 
   return (
     <nav className={`${ className }`}
          style={ styles.base }>
 
-        <Link style={ !homeActive ? styles.active : styles.inactive }
-              to="/about">About</Link>
+
+        <a style={ !homeActive ? styles.active : styles.inactive }
+           onClick={ homeActive && navigate.bind(this, '/about') }>About</a>
 
         {' / '}
 
-        <Link style={ homeActive ? styles.active : styles.inactive }
-              to="/">Counter</Link>
+        <a style={ homeActive ? styles.active : styles.inactive }
+           onClick={ !homeActive && navigate.bind(this, '/') }>Counter</a>
     </nav>
   );
 };
@@ -23,17 +23,21 @@ const Nav = ( { location, className = '' }) => {
 Nav.propTypes = {
   location: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
+  navigate: PropTypes.func.isRequired,
 };
 
 export default Radium(Nav);
 
 const styles = {
-  base: {},
+  base: {
+    userSelect: 'none',
+  },
   active: {
-    textDecoration: 'underline',
-
+    textDecoration: 'none',
+    borderBottom: '1px solid rgb(15, 16, 18)',
   },
   inactive: {
     textDecoration: 'none',
+    cursor: 'pointer',
   },
 };
