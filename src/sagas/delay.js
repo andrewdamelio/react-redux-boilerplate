@@ -1,4 +1,4 @@
-import { call, take, put } from 'redux-saga';
+import { take, put, call } from 'redux-saga/effects';
 import { hideLoadingModal  } from '../reducers/loading';
 
 const HALF_SECOND = 500;
