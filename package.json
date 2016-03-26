@@ -20,6 +20,7 @@
   "license": "MIT",
   "homepage": "https://github.com/andrewdamelio/react-redux-boilerplate#readme",
   "dependencies": {
+    "autoprefixer": "^6.3.4",
     "babel": "^6.3.26",
     "babel-core": "^6.4.5",
     "babel-eslint": "^5.0.0-beta8",
